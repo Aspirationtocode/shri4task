@@ -1,0 +1,61 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='format-detection', content='telephone=no')
+    // WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323
+    meta(name='viewport', content='user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height')
+    //- link(rel='stylesheet', type='text/css', href='css/jquery-mobile.css')
+    
+    link(rel='stylesheet', type='text/css', href='css/main.min.css')
+    link(rel='stylesheet', type='text/css', href='libs/font-awesome-4.6.3/css/font-awesome.min.css')
+    title Погода
+    
+  body(onload='startTime()')
+    section.top-line
+      .city-list
+        span.city-name
+      form.add-city-form(action='', onsubmit='return false;')
+        input#city(type='text', value='', placeholder='Поиск..')
+        i.add-city.fa.fa-plus      
+      .time
+        span.clock
+    section.weather-content
+      .city-toggle
+        i.fa.fa-caret-left 
+        div.count-city &nbsp1 / 5&nbsp
+        i.fa.fa-caret-right
+      .main-weather-information
+        div.temperature
+          span.main-degrees -
+          span.situation -
+      img.weather-img
+    section.extra-weather-content
+      ul.extra-weather-content-list
+        li.extra-weather-content-list-element
+          span.weather-parameter Влажность
+          span.weather-parameter-value.humidity-value -
+        li.extra-weather-content-list-element
+          span.weather-parameter Давление
+          span.weather-parameter-value.pressure-value -
+        li.extra-weather-content-list-element
+          span.weather-parameter Скорость ветра
+          span.weather-parameter-value.windspeed-value -
+        li.extra-weather-content-list-element
+          span.weather-parameter Облачность
+          span.weather-parameter-value.clouds-value -
+
+
+        
+    
+
+        
+      
+      script(type='text/javascript', src='js/libs.js')
+      script(type='text/javascript', src='js/stuff.js')
+      script(type='text/javascript', src='js/helpers.js')
+      script(type='text/javascript', src='js/core.js')
+      script(type='text/javascript', src='js/index.js')
+      script(type='text/javascript').
+        - app.initialize();
+
